@@ -1,0 +1,227 @@
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 5
+   Case Problem 3
+   
+   Author: Gabriel Fuentes   
+   Date: 12.4.18      
+   
+   Filename: cw_styles.css
+
+   This file contains the screen styles used with the 
+   Cauli-Wood Gallery home page
+
+*/
+
+
+/* Import Basic Design Styles  */
+@import url("cw_designs.css");
+/* Imports the designs stylesheet so it doesn't need to be linked into HTML. */
+
+/* ===============================
+	General Styles for All Devices
+   ===============================
+*/
+nav#bottom {
+    display: -ms-display-flex;
+    display: -moz-display-flex;
+    display: -webkit-display-flex;
+    display: flex;
+    -moz-flex-flow: row nowrap;
+    -ms-flex-flow: row nowrap;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-justify-content: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+nav#bottom ul {
+    -ms-flex: 0 1 150;
+    -moz-flex: 0 1 150;
+    -webkit-flex: 0 1 150;
+    flex: 0 1 150px;
+}
+/* This is to set the id of bottom and its ul within that navigation id of bottom to be
+a flexbox which has it change size based on the size of the width of the viewport. 
+Along with that it also sets where the content will be in that box. */
+/* ===============================
+	Mobile Styles up to 480 pixels
+   ===============================
+*/
+@media only screen and (max-width: 480px) {
+    body {
+        color: rgb(211, 211, 211);
+        background-color: rgb(51, 51, 51);
+    }
+    aside, article img, section#spotlight {
+        display: -ms-display-none;
+        display: -moz-display-none;
+        display: -webkit-display-none;
+        display: none;
+    }
+
+    nav#top ul {
+        display: -ms-flex;
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        -moz-flex-flow: row wrap;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        font-size: 2.2em;
+    }
+
+    nav#top ul li {
+        -webkit-flex: 1 1 130px;
+        flex: 1 1 130px;
+    }
+
+    nav#top ul li:nth-of-type(1) {
+        background-image: url(cw_image01.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    nav#top ul li:nth-of-type(2) {
+        background-image: url(cw_image02.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    nav#top ul li:nth-of-type(3) {
+        background-image: url(cw_image03.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    nav#top ul li:nth-of-type(4) {
+        background-image: url(cw_image04.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    nav#top ul li:nth-of-type(5) {
+        background-image: url(cw_image05.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    nav#top ul li:nth-of-type(6) {
+        background-image: url(cw_image06.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    p#links {
+        display: -ms-flex;
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: flex;
+        -ms-flex-flow: row nowrap;
+        -moz-flex-flow: row nowrap;
+        -webkit-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+        -ms-justify-content: space-around;
+        -moz-justify-content: space-around;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+    }
+
+    p#links a {
+        color: white;
+        background-color: rgb(220, 27, 27);
+        border-radius: 20px;
+        padding: 10px;
+        text-decoration: none;
+    }
+}
+/* These are the styles rules which are added when the viewport hits a width below
+480 pixels which makes it havethe body have different font and background color.
+The id of top is also made to use flexbox and have it be aranged to be in a row 
+and wrap when it doesn't have enough space. Each list item for this mobile design 
+is going to have an image as its background thats centered, cover all the availible 
+space and won't repeat. */
+
+/* ===============================
+	Desktop and Tablet Styles greater than 481 pixels
+   ===============================
+*/
+@media only screen and (min-width: 481px) {
+    body {
+        display: -ms-display-flex;
+        display: -moz-display-flex;
+        display: -webkit-display-flex;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        -moz-flex-flow: row wrap;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+    }
+
+    article {
+        -ms-flex: 2 1 400px;
+        -moz-flex: 2 1 400px;
+        -webkit-flex: 2 1 400px;
+        flex: 2 1 400px;
+    }
+
+    aside {
+        -ms-flex: 1 2 200px;
+        -moz-flex: 1 2 200px;
+        -webkit-flex: 1 2 200px;
+        flex: 1 2 200px;
+    }
+
+    nav#top ul {
+        display: -ms-flex;
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: flex;
+        -moz-flex-flow: row nowrap;
+        -ms-flex-flow: row nowrap;
+        -webkit-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+        background-color: rgb(51, 51, 51);
+        height: 50px;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+    nav#top ul li {
+        -moz-flex: 0 1 80px;
+        -ms-flex: 0 1 80px;
+        -webkit-flex: 0 1 80px;
+        flex: 0 1 80px;
+    }
+
+    p#links {
+        display: -moz-display-none;
+        display: -ms-display-none;
+        display: -webkit-display-none;
+        display: none;
+    }
+}
+/* This is the Media Query for Tablets and Desktops but fits for devices 
+that have a viewport of 481 pixels or greater. It creates a flexbox that 
+is in a row and wraps. The content in the id of top has been changed so 
+its centered, has a certain background color and a height of 50 pixels.
+It also sets the list item for that to be a maximum of 80 pixels so it 
+won't grow more than that. Also the id of links is set to not display 
+on the viewport larger than 481 pixels.    */
